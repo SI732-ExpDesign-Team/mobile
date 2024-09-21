@@ -1,10 +1,12 @@
-package com.example.restyle_mobile
+package com.example.restyle_mobile.home_screen.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.restyle_mobile.R
+import com.example.restyle_mobile.business_search.Activity.SearchBusinessesActivity
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +24,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         loginButton.setOnClickListener { //Cambiar por LoginActivity
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, SearchBusinessesActivity::class.java)
             startActivity(intent)
         }
     }
