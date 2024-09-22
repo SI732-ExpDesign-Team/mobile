@@ -9,17 +9,19 @@ import com.example.restyle_mobile.business_search.Fragment.BusinessProjectsFragm
 
 class BusinessProfilePagerAdapter(
     fragment: FragmentActivity,
-    private val businessId: Int
+    private val businessId: Int,
+    private val token: String
 ) : FragmentStateAdapter(fragment) {
+
     override fun getItemCount(): Int {
         return 3
     }
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> BusinessProfileFragment.newInstance(businessId)    //Profile
-            1 -> BusinessProjectsFragment.newInstance(businessId)   //Projects
-            2 -> BusinessPortfolioFragment.newInstance(businessId)  //Portfolio
+            0 -> BusinessProfileFragment.newInstance(businessId, token)    //Profile
+            1 -> BusinessProjectsFragment.newInstance(businessId, token)   //Projects
+            2 -> BusinessPortfolioFragment.newInstance(businessId, token)  //Portfolio
             else -> BusinessProfileFragment()
         }
     }

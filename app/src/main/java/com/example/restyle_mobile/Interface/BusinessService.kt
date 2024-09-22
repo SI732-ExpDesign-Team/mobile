@@ -1,15 +1,16 @@
 package Interface
 
 import Beans.Business
+import Beans.Businesses
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface BusinessService {
 
-    @GET("business")
-    fun getBusinesses(): Call<List<Business>>
+    @GET("api/v1/businesses")
+    fun getBusinesses(): Call<List<Businesses>>
 
-    @GET("business/{id}")
-    fun getBusinessById(@Path("id") businessId: Int): Call<Business>
+    @GET("api/v1/businesses/{id}")
+    fun getBusinessById(@Path("id") businessId: Int): Call<Businesses>
 }

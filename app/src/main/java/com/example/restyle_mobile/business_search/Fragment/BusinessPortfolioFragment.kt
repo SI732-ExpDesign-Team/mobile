@@ -10,11 +10,13 @@ import com.example.restyle_mobile.R
 class BusinessPortfolioFragment : Fragment() {
 
     private var businessId: Int = 0
+    private var token: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         businessId = arguments?.getInt("BUSINESS_ID") ?: 0
+        token = arguments?.getString("TOKEN")
     }
 
     override fun onCreateView(
@@ -28,10 +30,11 @@ class BusinessPortfolioFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(businessId: Int): BusinessPortfolioFragment {
+        fun newInstance(businessId: Int, token: String): BusinessPortfolioFragment {
             val fragment = BusinessPortfolioFragment()
             val args = Bundle()
             args.putInt("BUSINESS_ID", businessId)
+            args.putString("TOKEN", token)
             fragment.arguments = args
             return fragment
         }

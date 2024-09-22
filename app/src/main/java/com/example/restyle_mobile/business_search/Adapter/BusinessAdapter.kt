@@ -1,6 +1,7 @@
 package com.example.restyle_mobile.business_search.Adapter
 
 import Beans.Business
+import Beans.Businesses
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,8 @@ import com.example.restyle_mobile.R
 import com.squareup.picasso.Picasso
 
 class BusinessAdapter(
-    private var businessList: List<Business>,
-    private val onItemClick: (Business) -> Unit
+    private var businessList: List<Businesses>,
+    private val onItemClick: (Businesses) -> Unit
 ):RecyclerView.Adapter<CardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
@@ -40,7 +41,7 @@ class CardViewHolder(view: View):RecyclerView.ViewHolder(view) {
     val businessExpertise = view.findViewById<TextView>(R.id.businessCardExpertise)
     val businessImage = view.findViewById<ImageView>(R.id.businessCardImage)
 
-    fun render(businessModel: Business){
+    fun render(businessModel: Businesses){
         businessName.text = businessModel.name
         businessExpertise.text = businessModel.expertise
         Picasso.get().load(businessModel.image)
