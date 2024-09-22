@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\layout_fragment_recover_password.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\layout\\fragment_recover_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\layout_fragment_login.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\drawable_edit_text_background.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\drawable\\edit_text_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\font_montserrat_bold.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\font\\montserrat_bold.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\font_montserrat_extralight.ttf.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\font\\montserrat_extralight.ttf"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\drawable_ic_lock.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\drawable\\ic_lock.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\layout_fragment_register.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\layout\\fragment_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\font_montserrat.ttf.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\font\\montserrat.ttf"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\drawable_ic_email.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\drawable\\ic_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\layout_register.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\layout\\register.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-debug-33:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.7\\com.example.restyle_mobile.app-main-35:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.restyle_mobile.app-debug-33:/layout_fragment_login.xml.flat",
+        "source": "com.example.restyle_mobile.app-main-35:/layout/fragment_login.xml"
+    }
+]
