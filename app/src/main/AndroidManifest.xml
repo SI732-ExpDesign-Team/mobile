@@ -18,6 +18,8 @@
         <activity
             android:name=".Register"
             android:exported="false" />
+        <activity android:name=".LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".business_search.Activity.BusinessProfileActivity"
             android:exported="false" />

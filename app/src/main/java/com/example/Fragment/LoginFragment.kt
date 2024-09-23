@@ -1,6 +1,7 @@
 package Fragment
 
-import Persistence.OpenHelper
+import Persistence.UserHelper
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,10 +12,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.restyle_mobile.R
+import com.example.restyle_mobile.business_portfolio.Activity.Portfolio
+import com.example.restyle_mobile.business_search.Activity.SearchBusinessesActivity
 
 class LoginFragment : Fragment() {
 
-    lateinit var dbHelper: OpenHelper
+    lateinit var dbHelper: UserHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,7 +25,7 @@ class LoginFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
-        dbHelper = OpenHelper(requireContext())
+        dbHelper = UserHelper(requireContext())
 
         val etEmail = view.findViewById<EditText>(R.id.et_email)
         val etPassword = view.findViewById<EditText>(R.id.et_password)
@@ -34,8 +37,20 @@ class LoginFragment : Fragment() {
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
 
-            if (dbHelper.checkUser(email, password)) {
+            val (isLoginSuccessful, isRemodeler) = dbHelper.checkUser(email, password)
+
+            if (isLoginSuccessful) {
                 Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
+
+                // Check if the user is a remodeler or not and act accordingly
+                val intent = if (isRemodeler == true) {
+                    Intent(requireContext(), Portfolio::class.java)
+                } else {
+                    Intent(requireContext(), SearchBusinessesActivity::class.java)
+                }
+                startActivity(intent)
+
+                requireActivity().finish()
             } else {
                 Toast.makeText(requireContext(), "Invalid email or password", Toast.LENGTH_SHORT).show()
             }
@@ -61,3 +76,4 @@ class LoginFragment : Fragment() {
         return view
     }
 }
+

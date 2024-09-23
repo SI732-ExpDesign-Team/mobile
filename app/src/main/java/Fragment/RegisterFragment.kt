@@ -1,6 +1,6 @@
 package Fragment
 
-import Persistence.OpenHelper
+import Persistence.UserHelper
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +15,7 @@ import com.example.restyle_mobile.R
 
 class RegisterFragment : Fragment() {
 
-    lateinit var dbHelper: OpenHelper
+    lateinit var dbHelper: UserHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +23,7 @@ class RegisterFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_register, container, false)
 
-        dbHelper = OpenHelper(requireContext())
+        dbHelper = UserHelper(requireContext())
 
         val etFullName = view.findViewById<EditText>(R.id.et_full_name)
         val etEmail = view.findViewById<EditText>(R.id.et_email)

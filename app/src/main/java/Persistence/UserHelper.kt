@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class OpenHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class UserHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
         private const val DATABASE_NAME = "users.db"
@@ -46,7 +46,6 @@ class OpenHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nu
             return false
         }
 
-        // Proceed to add the user since the email is unique
         val contentValues = ContentValues().apply {
             put(COLUMN_FULL_NAME, fullName)
             put(COLUMN_EMAIL, email)
@@ -59,11 +58,20 @@ class OpenHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nu
         return result != -1L
     }
 
-    fun checkUser(email: String, password: String): Boolean {
+    fun checkUser(email: String, password: String): Pair<Boolean, Boolean?> {
         val db = this.readableDatabase
-        val cursor = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $COLUMN_EMAIL=? AND $COLUMN_PASSWORD=?", arrayOf(email, password))
-        val exists = cursor.count > 0
-        cursor.close()
-        return exists
+        val cursor = db.rawQuery(
+            "SELECT $COLUMN_IS_REMODELER FROM $TABLE_NAME WHERE $COLUMN_EMAIL=? AND $COLUMN_PASSWORD=?",
+            arrayOf(email, password)
+        )
+
+        return if (cursor.moveToFirst()) {
+            val isRemodeler = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_IS_REMODELER)) == 1
+            cursor.close()
+            Pair(true, isRemodeler)
+        } else {
+            cursor.close()
+            Pair(false, null)
+        }
     }
 }

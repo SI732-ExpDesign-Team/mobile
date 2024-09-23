@@ -2,6 +2,7 @@ package com.example.restyle_mobile.business_portfolio.Activity
 
 import Beans.Projects
 import Persistence.OpenHelper
+import Persistence.UserHelper
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
