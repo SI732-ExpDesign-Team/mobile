@@ -5,13 +5,17 @@ import Beans.Businesses
 import Interface.BusinessService
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
+import com.example.Fragment.DialogLoadingFragment
 import com.example.restyle_mobile.AuthInterceptor
 import com.example.restyle_mobile.Beans.SignInRequest
+import com.example.restyle_mobile.BottomNavigationHelper
 import com.example.restyle_mobile.Interface.AuthService
 import com.example.restyle_mobile.R
 import com.example.restyle_mobile.business_portfolio.Activity.Portfolio
@@ -51,6 +55,10 @@ class BusinessProfileActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_business_profile)
 
+        //Loading Fragment
+        val loadingDialog = DialogLoadingFragment.newInstance()
+        loadingDialog.show(supportFragmentManager, DialogLoadingFragment.TAG)
+
         //Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -59,36 +67,7 @@ class BusinessProfileActivity : AppCompatActivity() {
 
         //Navigation Bar
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    val intent = Intent(this, SearchBusinessesActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_projects -> {
-                    val intent = Intent(this, SearchBusinessesActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_businesses -> {
-                    val intent = Intent(this, SearchBusinessesActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_portfolios -> {
-                    val intent = Intent(this, Portfolio::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_profile -> {
-                    val intent = Intent(this, SearchBusinessesActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                else -> false
-            }
-        }
+        BottomNavigationHelper().setupBottomNavigation(this, bottomNavigationView)
 
         val businessId = intent.getIntExtra("BUSINESS_ID", -1)
 
@@ -117,6 +96,12 @@ class BusinessProfileActivity : AppCompatActivity() {
 
                     // Obtener los negocios y actualizar la UI
                     getBusinessById(businessId)
+
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        // Ocultar el DialogFragment cuando el backend haya respondido
+                        loadingDialog.dismiss()
+                        // Continuar con el flujo de la aplicación
+                    }, 2000)
 
                     // Actualiza la UI en el hilo principal
                     runOnUiThread {

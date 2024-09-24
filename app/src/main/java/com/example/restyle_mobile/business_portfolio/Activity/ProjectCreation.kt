@@ -16,6 +16,7 @@ import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
+import com.example.restyle_mobile.BottomNavigationHelper
 import com.example.restyle_mobile.R
 import com.example.restyle_mobile.business_search.Activity.SearchBusinessesActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -41,36 +42,7 @@ class ProjectCreation : AppCompatActivity() {
         //Navigation Bar
         window.navigationBarColor = ContextCompat.getColor(this, R.color.blue)
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    val intent = Intent(this, SearchBusinessesActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_projects -> {
-                    val intent = Intent(this, SearchBusinessesActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_businesses -> {
-                    val intent = Intent(this, SearchBusinessesActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_portfolios -> {
-                    val intent = Intent(this, Portfolio::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_profile -> {
-                    val intent = Intent(this, SearchBusinessesActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                else -> false
-            }
-        }
+        BottomNavigationHelper().setupBottomNavigation(this, bottomNavigationView)
 
         cancelButton = findViewById(R.id.btnCancelProject)
         addImageButton = findViewById(R.id.add_image_button)

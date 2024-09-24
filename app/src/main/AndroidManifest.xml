@@ -20,6 +20,10 @@
             android:exported="false" />
         <activity android:name=".LoginActivity"
             android:exported="false" />
+        <activity android:name=".CompanyProfile"
+            android:exported="false" />
+        <activity android:name=".UserProfile"
+            android:exported="false" />
         <activity
             android:name=".business_search.Activity.BusinessProfileActivity"
             android:exported="false" />
