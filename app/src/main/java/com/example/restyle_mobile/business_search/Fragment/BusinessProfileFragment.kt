@@ -73,7 +73,7 @@ class BusinessProfileFragment : Fragment() {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl("https://restyle-backend.zeabur.app/")
+            .baseUrl("https://restyle-backend-v2.zeabur.app/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
