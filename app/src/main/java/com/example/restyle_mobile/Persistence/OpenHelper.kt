@@ -110,8 +110,8 @@ class OpenHelper(context:Context): SQLiteOpenHelper(context, "projects.db", null
         return projects
     }
 
-    fun deleteProject(p:Projects){
-        writableDatabase.execSQL("DELETE FROM projects WHERE id = ${p.id}")
+    fun deleteProject(id:Int){
+        writableDatabase.execSQL("DELETE FROM projects WHERE id = $id")
     }
 
     fun getProjectById(id:Int):Projects?{
