@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.restyle_mobile.R
+import com.example.restyle_mobile.business_portfolio.Repository.ProjectRepository
 
 class BusinessesFragment : Fragment() {
     lateinit var dbHelper: OpenHelper
@@ -26,6 +27,10 @@ class BusinessesFragment : Fragment() {
         val view = inflater.inflate(R.layout.business_info, container, false)
         dbHelper = OpenHelper(requireContext())
 
+        // Cargar proyectos en ProjectRepository si aún no están cargados
+        if (ProjectRepository.projects.isEmpty()) {
+            ProjectRepository.loadInitialProjects(dbHelper)
+        }
         val business = dbHelper.getBusinessesById(1)
 
         if (business != null) {
@@ -35,7 +40,7 @@ class BusinessesFragment : Fragment() {
             val recyclerView = view.findViewById<RecyclerView>(R.id.rvProjects)
 
             recyclerView.layoutManager = LinearLayoutManager(context)
-            recyclerView.adapter = ProjectAdapter(dbHelper.getProjects())
+            recyclerView.adapter = ProjectAdapter(ProjectRepository.projects)
 
             businessId.text = business.id.toString()
             businessDescription.text = business.description

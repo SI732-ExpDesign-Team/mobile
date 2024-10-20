@@ -2,7 +2,6 @@ package com.example.restyle_mobile.business_portfolio.Activity
 
 import Beans.Projects
 import Persistence.OpenHelper
-import Persistence.UserHelper
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -18,6 +17,7 @@ import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.restyle_mobile.BottomNavigationHelper
 import com.example.restyle_mobile.R
+import com.example.restyle_mobile.business_portfolio.Repository.ProjectRepository
 import com.example.restyle_mobile.business_search.Activity.SearchBusinessesActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -62,18 +62,19 @@ class ProjectCreation : AppCompatActivity() {
             dbHelper = OpenHelper(this)
             val title = txtTitulo.text.toString()
             val description = txtDescripcion.text.toString()
-            val imageUri = selectedImageUri?.toString() ?: ""
+            val imageUri = selectedImageUri.toString()
 
             // Guardar el proyecto en la base de datos
             val project = Projects(description, imageUri, title)
             dbHelper.newProject(project)
 
+            // Recargar proyectos desde la base de datos
+            ProjectRepository.loadInitialProjects(dbHelper)
             txtTitulo.text.clear()
             txtDescripcion.text.clear()
             val intent = Intent(this, Portfolio::class.java)
             startActivity(intent)
         }
-
         cancelButton.setOnClickListener {
             val intent = Intent(this, Portfolio::class.java)
             startActivity(intent)

@@ -73,27 +73,17 @@ class OpenHelper(context:Context): SQLiteOpenHelper(context, "projects.db", null
     }
 
     fun newProject(p: Projects) {
-        val defaultBusinessId = 1
-        val defaultContractorId = 1
-        val defaultDescription = "No description provided"
-        val defaultFinishDate = "2025-01-15 00:00:00"
-        val defaultImage = "https://www.budgetdumpster.com/images/blog/home-remodel-sketches-600x300.jpg"
-        val defaultName = "Unnamed Project"
-        val defaultStartDate = "2024-09-15 00:00:00"
+            val contentValues = ContentValues().apply {
+                put("business_id", if (p.business_id != 0) p.business_id else 1)
+                put("contractor_id",if (p.contractor_id != 0) p.contractor_id else 1)
+                put("description", if (p.description.isNotEmpty()) p.description else "No description provided")
+                put("finish_date", if (p.finish_date.isNotEmpty()) p.finish_date else "2025-01-15")
+                put("image", if (p.image.isNullOrEmpty()) p.image else "https://www.budgetdumpster.com/images/blog/home-remodel-sketches-600x300.jpg")
+                put("name", if (p.name.isNotEmpty()) p.name else "Unnamed Project")
+                put("start_date", if (p.start_date.isNotEmpty()) p.start_date else "2024-09-15")
+            }
+            writableDatabase.insert("projects", null, contentValues)
 
-        // Crear el objeto ContentValues y asignar los valores, usando valores por defecto si están vacíos
-        val contentValues = ContentValues().apply {
-            put("business_id", if (p.business_id != 1) p.business_id else defaultBusinessId)
-            put("contractor_id", if (p.contractor_id != 1) p.contractor_id else defaultContractorId)
-            put("description", if (p.description.isNotEmpty()) p.description else defaultDescription)
-            put("finish_date", if (p.finish_date.isNotEmpty()) p.finish_date else defaultFinishDate)
-            put("image", if (p.image.isNotEmpty()) p.image else defaultImage)
-            put("name", if (p.name.isNotEmpty()) p.name else defaultName)
-            put("start_date", if (p.start_date.isNotEmpty()) p.start_date else defaultStartDate)
-        }
-
-        // Insertar los valores en la base de datos
-        writableDatabase.insert("projects", null, contentValues)
     }
 
     fun getProjects():MutableList<Projects> {
