@@ -115,7 +115,11 @@
         app:startIconTint="#8D8D8D">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchEditText"
             android:layout_width="match_parent"
+            android:hint="Buscar por nombre"
+            android:inputType="text"
+            android:textColorHint="@color/gray"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>

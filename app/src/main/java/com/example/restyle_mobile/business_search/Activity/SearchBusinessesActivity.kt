@@ -8,6 +8,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -22,6 +24,7 @@ import com.example.restyle_mobile.R
 import com.example.restyle_mobile.business_portfolio.Activity.Portfolio
 import com.example.restyle_mobile.business_search.Adapter.BusinessAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -35,6 +38,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class SearchBusinessesActivity : AppCompatActivity() {
 
     lateinit var businessService: BusinessService
+    private var allBusinesses: List<Businesses> = emptyList() // Lista de todos los negocios
 
     fun provideRetrofitWithAuth(token: String): Retrofit {
         val client = OkHttpClient.Builder()
@@ -103,6 +107,19 @@ class SearchBusinessesActivity : AppCompatActivity() {
                 println("Error en el sign-in: ${response.errorBody()?.string()}")
             }
         }
+
+        // Search bar
+        val searchInput = findViewById<TextInputEditText>(R.id.searchEditText)
+
+        searchInput.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterBusinesses(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
     }
 
     // Función para obtener y mostrar los negocios
@@ -113,6 +130,7 @@ class SearchBusinessesActivity : AppCompatActivity() {
                 val businesses = response.body()
 
                 val listBusinesses = mutableListOf<Businesses>()
+                allBusinesses = businesses ?: emptyList() // Guardar la lista completa de negocios
 
                 if (businesses != null) {
                     for (item in businesses) {
@@ -147,5 +165,26 @@ class SearchBusinessesActivity : AppCompatActivity() {
                 t.printStackTrace()
             }
         })
+    }
+
+    private fun filterBusinesses(query: String) {
+        val filteredList = allBusinesses.filter { business ->
+            business.name.contains(query, ignoreCase = true) // Filtrar por nombre de negocio
+        }
+
+        // Actualizar el RecyclerView con la lista filtrada
+        updateRecyclerView(filteredList)
+    }
+
+    private fun updateRecyclerView(businesses: List<Businesses>) {
+        runOnUiThread {
+            val recycler = findViewById<RecyclerView>(R.id.recyclerViewBusinesses)
+            recycler.layoutManager = LinearLayoutManager(applicationContext)
+            recycler.adapter = BusinessAdapter(businesses) { business ->
+                val intent = Intent(this@SearchBusinessesActivity, BusinessProfileActivity::class.java)
+                intent.putExtra("BUSINESS_ID", business.id)
+                startActivity(intent)
+            }
+        }
     }
 }
