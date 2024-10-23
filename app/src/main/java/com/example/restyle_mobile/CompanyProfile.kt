@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.content.Intent
+import android.widget.Button
+import com.example.restyle_mobile.R
+import com.example.restyle_mobile.EditCompany
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CompanyProfile : AppCompatActivity() {
@@ -23,5 +25,12 @@ class CompanyProfile : AppCompatActivity() {
         //Navigation Bar
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
         BottomNavigationHelper().setupBottomNavigation(this, bottomNavigationView)
+
+        // Edit Profile Button
+        val editProfileButton: Button = findViewById<Button>(R.id.edit_profile_company_button)
+        editProfileButton.setOnClickListener {
+            val intent = Intent(this, EditCompany::class.java)
+            startActivity(intent)
+        }
     }
 }

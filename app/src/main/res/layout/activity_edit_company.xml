@@ -69,160 +69,174 @@
             android:id="@+id/profile_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/user"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/user"/>
+            android:background="@drawable/user"
+            android:src="@drawable/user" />
 
         <!-- Campo Nombre -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombres:"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="20dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
+            android:text="Nombres:"
             android:textAlignment="textStart"
-            android:layout_marginLeft="20dp"/>
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+            android:background="@drawable/style_text"
             android:hint="Ingresa tus nombres"
-            android:textSize="18dp"
             android:padding="10dp"
-            android:background="@drawable/style_text" />
+            android:textSize="18dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dirección:"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="20dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
+            android:text="Dirección:"
             android:textAlignment="textStart"
-            android:layout_marginLeft="20dp"/>
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+            android:background="@drawable/style_text"
             android:hint="Ingresa tu dirección"
-            android:textSize="18dp"
             android:padding="10dp"
-            android:background="@drawable/style_text" />
+            android:textSize="18dp" />
 
         <!-- Campo Correo Electrónico -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ciudad:"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="20dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
+            android:text="Ciudad:"
             android:textAlignment="textStart"
-            android:layout_marginLeft="20dp"/>
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:hint="Ingresa tu ciudad"
-            android:textSize="18dp"
-            android:padding="10dp"
             android:background="@drawable/style_text"
-            android:inputType="textEmailAddress" />
+            android:hint="Ingresa tu ciudad"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textSize="18dp" />
 
         <!-- Campo Teléfono -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Teléfono:"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="20dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
+            android:text="Teléfono:"
             android:textAlignment="textStart"
-            android:layout_marginLeft="20dp"/>
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:hint="Ingresa tu teléfono"
-            android:textSize="18dp"
-            android:padding="10dp"
             android:background="@drawable/style_text"
-            android:inputType="phone" />
+            android:hint="Ingresa tu teléfono"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textSize="18dp" />
 
         <!-- Campo Biografía -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descripción:"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="20dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
+            android:text="Descripción:"
             android:textAlignment="textStart"
-            android:layout_marginLeft="20dp"/>
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:hint="Ingresa tu descripción"
-            android:textSize="18dp"
-            android:padding="5dp"
             android:background="@drawable/style_text"
+            android:hint="Ingresa tu descripción"
             android:inputType="textMultiLine"
-            android:lines="2" />
+            android:lines="2"
+            android:padding="5dp"
+            android:textSize="18dp" />
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
             android:background="@color/dark_blue"
-            app:backgroundTint="@color/dark_blue"
             android:text="Guardar Cambios"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp" />
+            app:backgroundTint="@color/dark_blue" />
 
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#3F51B5"
-        app:itemIconTint="@color/white"
-        app:itemTextAppearanceActive="@style/BottomNavigationTextAppearance"
-        app:itemTextAppearanceInactive="@style/BottomNavigationTextAppearance"
-        app:itemTextColor="@color/white"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_navigation_menu" />
+        android:layout_height="match_parent">
+
+        <!-- Bottom Navigation -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3F51B5"
+                app:itemIconTint="@color/white"
+                app:itemTextAppearanceActive="@style/BottomNavigationTextAppearance"
+                app:itemTextAppearanceInactive="@style/BottomNavigationTextAppearance"
+                app:itemTextColor="@color/white"
+                app:labelVisibilityMode="labeled"
+                android:layout_alignParentBottom="true"
+                app:menu="@menu/bottom_navigation_menu"/>
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 </LinearLayout>

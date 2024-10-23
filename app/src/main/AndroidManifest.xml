@@ -24,6 +24,8 @@
             android:exported="false" />
         <activity android:name=".UserProfile"
             android:exported="false" />
+        <activity android:name=".EditCompany"
+            android:exported="false"/>
         <activity
             android:name=".business_search.Activity.BusinessProfileActivity"
             android:exported="false" />
@@ -49,5 +51,4 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>
