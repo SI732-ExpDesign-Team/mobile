@@ -44,7 +44,7 @@ class BusinessProfileActivity : AppCompatActivity() {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl("https://restyle-backend-v2.zeabur.app/")
+            .baseUrl("https://restyle-backend-v2.fra1.zeabur.app/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -73,7 +73,7 @@ class BusinessProfileActivity : AppCompatActivity() {
 
         // Configurar Retrofit para sign-in sin autenticación
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://restyle-backend-v2.zeabur.app/")
+            .baseUrl("https://restyle-backend-v2.fra1.zeabur.app/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

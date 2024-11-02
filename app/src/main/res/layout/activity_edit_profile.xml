@@ -48,13 +48,14 @@
                 android:layout_height="wrap_content"/>
 
             <!--User Picture in Toolbar-->
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/toolbar_client"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:contentDescription="User Picture"
-                android:src="@drawable/user"
-                android:visibility="visible"/>
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                app:shapeAppearanceOverlay="@style/MyCustomShapeAppearance_SmallComponent"
+                android:src="@drawable/user" />
 
         </androidx.appcompat.widget.Toolbar>
 
