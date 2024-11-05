@@ -44,7 +44,7 @@
                 android:textSize="20sp" />
 
             <Space
-                android:layout_width="220dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"/>
 
             <!--User Picture in Toolbar-->
