@@ -14,6 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import android.app.AlertDialog
 
 class ProjectAdapter(private val projects: MutableList<Projects>) : RecyclerView.Adapter<ProjectsViewHolder>() {
 
@@ -27,16 +28,33 @@ class ProjectAdapter(private val projects: MutableList<Projects>) : RecyclerView
 
         val deleteIcon = holder.itemView.findViewById<ImageView>(R.id.delete_icon)
         deleteIcon.setOnClickListener {
-            GlobalScope.launch(Dispatchers.IO) {
-                val dbHelper = OpenHelper(holder.itemView.context)
-                dbHelper.deleteProject(project.id) // Eliminar de la base de datos
+            // Crear el diálogo de confirmación
+            AlertDialog.Builder(holder.itemView.context).apply {
+                setTitle("Eliminar Proyecto")
+                setMessage("¿Estás seguro de que deseas eliminar este proyecto?")
 
-                withContext(Dispatchers.Main) {
-                    ProjectRepository.deleteProject(project.id) // Eliminar del repositorio
-                    notifyItemRemoved(position)
-                    notifyItemRangeChanged(position, itemCount)
-                    Toast.makeText(holder.itemView.context, "Proyecto eliminado", Toast.LENGTH_SHORT).show()
+                setPositiveButton("Sí") { _, _ ->
+                    // Confirmación de eliminación
+                    GlobalScope.launch(Dispatchers.IO) {
+                        val dbHelper = OpenHelper(holder.itemView.context)
+                        dbHelper.deleteProject(project.id) // Eliminar de la base de datos
+
+                        withContext(Dispatchers.Main) {
+                            ProjectRepository.deleteProject(project.id) // Eliminar del repositorio
+                            projects.removeAt(position)
+                            notifyItemRemoved(position)
+                            notifyItemRangeChanged(position, itemCount)
+                            Toast.makeText(holder.itemView.context, "Proyecto eliminado", Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 }
+
+                setNegativeButton("No") { dialog, _ ->
+                    // Cancelar eliminación
+                    dialog.dismiss()
+                }
+
+                create().show()
             }
         }
     }

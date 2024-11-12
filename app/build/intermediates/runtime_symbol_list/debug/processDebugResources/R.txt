@@ -3169,6 +3169,7 @@ int drawable placeholder_img 0x7f080112
 int drawable restyle_home 0x7f080113
 int drawable restyle_logo 0x7f080114
 int drawable style_text 0x7f080115
+int drawable teacher 0x7f08011a
 int drawable test_level_drawable 0x7f080116
 int drawable tooltip_frame_dark 0x7f080117
 int drawable tooltip_frame_light 0x7f080118
@@ -3375,6 +3376,7 @@ int id easeInOut 0x7f0a00c3
 int id easeOut 0x7f0a00c4
 int id east 0x7f0a00c5
 int id edge 0x7f0a00c6
+int id edit_profile_company_button 0x7f0a025a
 int id edit_query 0x7f0a00c7
 int id edit_text_id 0x7f0a00c8
 int id editcompany 0x7f0a00c9
@@ -3464,6 +3466,7 @@ int id list_item 0x7f0a011c
 int id loading_image 0x7f0a011d
 int id login 0x7f0a011e
 int id login_button 0x7f0a011f
+int id logout_button 0x7f0a025b
 int id m3_side_sheet 0x7f0a0120
 int id main 0x7f0a0121
 int id marquee 0x7f0a0122
@@ -3617,6 +3620,7 @@ int id scrollIndicatorDown 0x7f0a01b5
 int id scrollIndicatorUp 0x7f0a01b6
 int id scrollView 0x7f0a01b7
 int id scrollable 0x7f0a01b8
+int id searchEditText 0x7f0a025c
 int id search_badge 0x7f0a01b9
 int id search_bar 0x7f0a01ba
 int id search_businesses 0x7f0a01bb
@@ -4496,6 +4500,7 @@ int style MaterialAlertDialog_MaterialComponents_Title_Panel 0x7f130134
 int style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked 0x7f130135
 int style MaterialAlertDialog_MaterialComponents_Title_Text 0x7f130136
 int style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked 0x7f130137
+int style MyCustomShapeAppearance_SmallComponent 0x7f130469
 int style Platform_AppCompat 0x7f130138
 int style Platform_AppCompat_Light 0x7f130139
 int style Platform_MaterialComponents 0x7f13013a
