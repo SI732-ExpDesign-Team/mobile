@@ -1,4 +1,4 @@
-#Mon Nov 11 20:10:36 PET 2024
+#Mon Nov 11 20:40:49 PET 2024
 base.0=C\:\\Users\\Paolo\\Documents\\PROGRAMACION\\6to\\restyle-mobile\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Paolo\\Documents\\PROGRAMACION\\6to\\restyle-mobile\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=C\:\\Users\\Paolo\\Documents\\PROGRAMACION\\6to\\restyle-mobile\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
