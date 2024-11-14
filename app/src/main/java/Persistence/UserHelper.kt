@@ -16,6 +16,7 @@ class UserHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nu
         const val COLUMN_EMAIL = "email"
         const val COLUMN_PASSWORD = "password"
         const val COLUMN_IS_REMODELER = "is_remodeler"
+        const val COLUMN_PHOTO_URL = "photo_url"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -24,7 +25,8 @@ class UserHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nu
                 + "$COLUMN_FULL_NAME TEXT,"
                 + "$COLUMN_EMAIL TEXT,"
                 + "$COLUMN_PASSWORD TEXT,"
-                + "$COLUMN_IS_REMODELER INTEGER)")
+                + "$COLUMN_IS_REMODELER INTEGER,"
+                + "$COLUMN_PHOTO_URL TEXT)")
         db.execSQL(CREATE_USER_TABLE)
     }
 
@@ -33,7 +35,7 @@ class UserHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nu
         onCreate(db)
     }
 
-    fun addUser(fullName: String, email: String, password: String, isRemodeler: Boolean): Boolean {
+    fun addUser(fullName: String, email: String, password: String, isRemodeler: Boolean, photoUrl: String?): Boolean {
         val db = this.writableDatabase
 
         // Check if email already exists
@@ -51,6 +53,7 @@ class UserHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nu
             put(COLUMN_EMAIL, email)
             put(COLUMN_PASSWORD, password)
             put(COLUMN_IS_REMODELER, if (isRemodeler) 1 else 0)
+            put(COLUMN_PHOTO_URL, photoUrl)
         }
 
         val result = db.insert(TABLE_NAME, null, contentValues)
