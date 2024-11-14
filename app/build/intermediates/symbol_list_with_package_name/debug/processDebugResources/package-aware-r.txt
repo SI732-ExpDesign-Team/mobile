@@ -3170,6 +3170,7 @@ drawable placeholder_img
 drawable restyle_home
 drawable restyle_logo
 drawable style_text
+drawable teacher
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3376,6 +3377,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id edit_profile_company_button
 id edit_query
 id edit_text_id
 id editcompany
@@ -3465,6 +3467,7 @@ id list_item
 id loading_image
 id login
 id login_button
+id logout_button
 id m3_side_sheet
 id main
 id marquee
@@ -3618,6 +3621,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchEditText
 id search_badge
 id search_bar
 id search_businesses
@@ -4497,6 +4501,7 @@ style MaterialAlertDialog_MaterialComponents_Title_Panel
 style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked
 style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
+style MyCustomShapeAppearance_SmallComponent
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

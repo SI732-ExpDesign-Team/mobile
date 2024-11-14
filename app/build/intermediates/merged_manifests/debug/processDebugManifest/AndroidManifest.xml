@@ -43,6 +43,9 @@
             android:name="com.example.restyle_mobile.UserProfile"
             android:exported="false" />
         <activity
+            android:name="com.example.restyle_mobile.EditCompany"
+            android:exported="false" />
+        <activity
             android:name="com.example.restyle_mobile.business_search.Activity.BusinessProfileActivity"
             android:exported="false" />
         <activity

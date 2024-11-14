@@ -43,6 +43,7 @@ drawable placeholder_img
 drawable restyle_home
 drawable restyle_logo
 drawable style_text
+drawable teacher
 drawable user
 font montserrat
 font montserrat_bold
@@ -72,6 +73,7 @@ id cb_is_remodeler
 id cb_terms_conditions
 id companyprofile
 id delete_icon
+id edit_profile_company_button
 id editcompany
 id editprofile
 id et_confirm_password
@@ -88,6 +90,7 @@ id imgBusiness
 id loading_image
 id login
 id login_button
+id logout_button
 id main
 id nav_businesses
 id nav_home
@@ -105,6 +108,7 @@ id project_title
 id recyclerViewBusinesses
 id register
 id rvProjects
+id searchEditText
 id search_businesses
 id signup_button
 id tabLayout
@@ -171,6 +175,7 @@ mipmap ic_launcher_round
 string app_name
 style Base.Theme.Restylemobile
 style BottomNavigationTextAppearance
+style MyCustomShapeAppearance_SmallComponent
 style Theme.Restylemobile
 xml backup_rules
 xml data_extraction_rules
