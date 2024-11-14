@@ -39,11 +39,13 @@ class CardViewHolder(view: View):RecyclerView.ViewHolder(view) {
 
     val businessName = view.findViewById<TextView>(R.id.businessCardName)
     val businessExpertise = view.findViewById<TextView>(R.id.businessCardExpertise)
+    val businessDescription = view.findViewById<TextView>(R.id.businessCardDescription)
     val businessImage = view.findViewById<ImageView>(R.id.businessCardImage)
 
     fun render(businessModel: Businesses){
         businessName.text = businessModel.name
         businessExpertise.text = businessModel.expertise
+        businessDescription.text = businessModel.description
         Picasso.get().load(businessModel.image)
             .resize(300, 300)
             .centerCrop()

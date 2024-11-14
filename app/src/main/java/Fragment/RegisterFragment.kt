@@ -5,6 +5,10 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,6 +53,25 @@ class RegisterFragment : Fragment() {
         val btnSelectPhoto = view.findViewById<Button>(R.id.btn_upload_photo)
         val ivSelectedPhoto = view.findViewById<ImageView>(R.id.iv_profile_photo)
         val tvAlreadyHaveAccount = view.findViewById<TextView>(R.id.tv_already_have_account)
+
+        val checkbox = view.findViewById<CheckBox>(R.id.cb_terms_conditions)
+        val termsText = "Acepto los términos y condiciones"
+        val spannable = SpannableString(termsText)
+
+        val termsStart = termsText.indexOf("términos y condiciones")
+        val termsEnd = termsText.length
+
+        val termsClickableSpan = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                val url = "https://mondongodev.github.io/restyle-landing-page/terms.html"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                widget.context.startActivity(intent)
+            }
+        }
+
+        spannable.setSpan(termsClickableSpan, termsStart, termsEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        checkbox.text = spannable
+        checkbox.movementMethod = LinkMovementMethod.getInstance()
 
         btnSelectPhoto.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)

@@ -38,6 +38,15 @@
             android:scaleType="centerCrop"
             android:src="@drawable/placeholder_img"/>
 
+        <TextView
+            android:id="@+id/businessCardDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="11sp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat"/>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
