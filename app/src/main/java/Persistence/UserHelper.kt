@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.restyle_mobile.Beans.User
 
 class UserHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -77,4 +78,74 @@ class UserHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nu
             Pair(false, null)
         }
     }
+
+    fun getUserByEmail(email: String): User? {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $COLUMN_EMAIL=?", arrayOf(email))
+
+        return if (cursor.moveToFirst()) {
+            val user = User(
+                id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID)),
+                fullName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FULL_NAME)),
+                email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL)),
+                isRemodeler = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_IS_REMODELER)) == 1,
+                photoUrl = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PHOTO_URL))
+            )
+            cursor.close()
+            user
+        } else {
+            cursor.close()
+            null
+        }
+    }
+
+    fun updateUser(email: String, fullName: String, photoUrl: String?): Boolean {
+        val db = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put(COLUMN_FULL_NAME, fullName)
+            put(COLUMN_PHOTO_URL, photoUrl)
+        }
+
+        val result = db.update(TABLE_NAME, contentValues, "$COLUMN_EMAIL=?", arrayOf(email))
+        db.close()
+        return result > 0
+    }
+
+    fun checkUserWithId(email: String, password: String): Triple<Boolean, Boolean?, String?> {
+        val db = readableDatabase
+        val query = "SELECT id, is_remodeler FROM users WHERE email = ? AND password = ?"
+        val cursor = db.rawQuery(query, arrayOf(email, password))
+
+        return if (cursor.moveToFirst()) {
+            val userId = cursor.getString(cursor.getColumnIndexOrThrow("id"))
+            val isRemodeler = cursor.getInt(cursor.getColumnIndexOrThrow("is_remodeler")) == 1
+            Triple(true, isRemodeler, userId)
+        } else {
+            Triple(false, null, null)
+        }.also {
+            cursor.close()
+        }
+    }
+
+    fun getUserDataById(userId: String): User? {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID=?", arrayOf(userId))
+
+        return if (cursor.moveToFirst()) {
+            val user = User(
+                id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID)),
+                fullName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FULL_NAME)),
+                email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL)),
+                isRemodeler = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_IS_REMODELER)) == 1,
+                photoUrl = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PHOTO_URL))
+            )
+            cursor.close()
+            user
+        } else {
+            cursor.close()
+            null
+        }
+    }
+
+
 }
