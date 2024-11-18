@@ -9,6 +9,7 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -96,47 +97,26 @@ class RegisterFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            // Handle the image URI
-            val file = getFileFromUri(photoUri!!)
-            if (file != null) {
-                val requestFile = RequestBody.create("image/jpeg".toMediaTypeOrNull(), file)
-                val body = MultipartBody.Part.createFormData("image", file.name, requestFile)
+            // Mock URL for testing
+            val mockPhotoUrl = "https://via.placeholder.com/150"
 
-                val authHeader = "600f35d5ce72069"
+            // Save the mock URL to the database
+            val success = dbHelper.addUser(fullName, email, password, isRemodeler, mockPhotoUrl)
 
-                // Call Retrofit to upload the image
-                RetrofitClient.uploadImage(authHeader, body).enqueue(object : Callback<UploadResponse> {
-                    override fun onResponse(call: Call<UploadResponse>, response: Response<UploadResponse>) {
-                        if (response.isSuccessful && response.body() != null) {
-                            val photoUrl = response.body()!!.data.link
-                            // Now save the photo URL to the database
-                            val success = dbHelper.addUser(fullName, email, password, isRemodeler, photoUrl)
+            if (success) {
+                Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
 
-                            if (success) {
-                                Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
-
-                                // Navigate to LoginFragment after successful registration
-                                val loginFragment = LoginFragment()
-                                parentFragmentManager.beginTransaction()
-                                    .replace(R.id.fragment_container, loginFragment)
-                                    .addToBackStack(null)
-                                    .commit()
-                            } else {
-                                Toast.makeText(requireContext(), "Registration Failed", Toast.LENGTH_SHORT).show()
-                            }
-                        } else {
-                            Toast.makeText(requireContext(), "Image upload failed", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-
-                    override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
-                        Toast.makeText(requireContext(), "Image upload failed: ${t.message}", Toast.LENGTH_SHORT).show()
-                    }
-                })
+                // Navigate to LoginFragment after successful registration
+                val loginFragment = LoginFragment()
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, loginFragment)
+                    .addToBackStack(null)
+                    .commit()
             } else {
-                Toast.makeText(requireContext(), "Failed to get image file", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Registration Failed", Toast.LENGTH_SHORT).show()
             }
         }
+
 
 
         tvAlreadyHaveAccount.setOnClickListener {
