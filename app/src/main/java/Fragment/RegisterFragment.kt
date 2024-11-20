@@ -31,6 +31,7 @@ class RegisterFragment : Fragment() {
     private lateinit var dbHelper: UserHelper
     private var photoUri: Uri? = null
     private val PICK_IMAGE_REQUEST = 1
+    private val placeholderImageUrl = "https://via.placeholder.com/150"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,58 +64,38 @@ class RegisterFragment : Fragment() {
             val confirmPassword = etConfirmPassword.text.toString()
             val isRemodeler = cbIsRemodeler.isChecked
 
-            if (photoUri == null) {
-                Toast.makeText(requireContext(), "Please select a photo", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
             if (password != confirmPassword) {
                 Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Handle the image URI
-            val file = getFileFromUri(photoUri!!)
-            if (file != null) {
-                val requestFile = RequestBody.create("image/jpeg".toMediaTypeOrNull(), file)
-                val body = MultipartBody.Part.createFormData("image", file.name, requestFile)
-
-                val authHeader = "Bearer bdc6eae81f2cbf71568284ec1d0ff625a6f8e7e6"
-
-                // Call Retrofit to upload the image
-                RetrofitClient.uploadImage(authHeader, body).enqueue(object : Callback<UploadResponse> {
-                    override fun onResponse(call: Call<UploadResponse>, response: Response<UploadResponse>) {
-                        if (response.isSuccessful && response.body() != null) {
-                            val photoUrl = response.body()!!.data.link
-                            // Now save the photo URL to the database
-                            val success = dbHelper.addUser(fullName, email, password, isRemodeler, photoUrl)
-
-                            if (success) {
-                                Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
-
-                                // Navigate to LoginFragment after successful registration
-                                val loginFragment = LoginFragment()
-                                parentFragmentManager.beginTransaction()
-                                    .replace(R.id.fragment_container, loginFragment)
-                                    .addToBackStack(null)
-                                    .commit()
-                            } else {
-                                Toast.makeText(requireContext(), "Registration Failed", Toast.LENGTH_SHORT).show()
-                            }
-                        } else {
-                            Toast.makeText(requireContext(), "Image upload failed", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-
-                    override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
-                        Toast.makeText(requireContext(), "Image upload failed: ${t.message}", Toast.LENGTH_SHORT).show()
-                    }
-                })
+            if (photoUri == null) {
+                saveUserWithPhoto(fullName, email, password, isRemodeler, placeholderImageUrl)
             } else {
-                Toast.makeText(requireContext(), "Failed to get image file", Toast.LENGTH_SHORT).show()
+                val file = getFileFromUri(photoUri!!)
+                if (file != null) {
+                    val requestFile = RequestBody.create("image/jpeg".toMediaTypeOrNull(), file)
+                    val body = MultipartBody.Part.createFormData("image", file.name, requestFile)
+
+                    val authHeader = "Bearer bdc6eae81f2cbf71568284ec1d0ff625a6f8e7e6"
+
+                    RetrofitClient.uploadImage(authHeader, body).enqueue(object : Callback<UploadResponse> {
+                        override fun onResponse(call: Call<UploadResponse>, response: Response<UploadResponse>) {
+                            val photoUrl = response.body()?.data?.link ?: placeholderImageUrl
+                            saveUserWithPhoto(fullName, email, password, isRemodeler, photoUrl)
+                        }
+
+                        override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
+                            Toast.makeText(requireContext(), "Image upload failed, using placeholder", Toast.LENGTH_SHORT).show()
+                            saveUserWithPhoto(fullName, email, password, isRemodeler, placeholderImageUrl)
+                        }
+                    })
+                } else {
+                    Toast.makeText(requireContext(), "Failed to get image file, using placeholder", Toast.LENGTH_SHORT).show()
+                    saveUserWithPhoto(fullName, email, password, isRemodeler, placeholderImageUrl)
+                }
             }
         }
-
 
         tvAlreadyHaveAccount.setOnClickListener {
             val loginFragment = LoginFragment()
@@ -125,6 +106,21 @@ class RegisterFragment : Fragment() {
         }
 
         return view
+    }
+
+    private fun saveUserWithPhoto(fullName: String, email: String, password: String, isRemodeler: Boolean, photoUrl: String) {
+        val success = dbHelper.addUser(fullName, email, password, isRemodeler, photoUrl)
+
+        if (success) {
+            Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
+            val loginFragment = LoginFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, loginFragment)
+                .addToBackStack(null)
+                .commit()
+        } else {
+            Toast.makeText(requireContext(), "Registration Failed", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getFileFromUri(uri: Uri): File? {
