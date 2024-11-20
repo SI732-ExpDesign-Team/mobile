@@ -5,6 +5,9 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ClickableSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +17,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import com.example.restyle_mobile.Interface.RetrofitClient
 import com.example.restyle_mobile.Interface.UploadResponse
@@ -32,6 +36,7 @@ class RegisterFragment : Fragment() {
     private var photoUri: Uri? = null
     private val PICK_IMAGE_REQUEST = 1
     private val placeholderImageUrl = "https://via.placeholder.com/150"
+    private val termsAndConditionsText = "Acepto los <a href='https://mondongodev.github.io/restyle-landing-page/terms.html'>términos y condiciones</a>."
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +55,23 @@ class RegisterFragment : Fragment() {
         val btnSelectPhoto = view.findViewById<Button>(R.id.btn_upload_photo)
         val ivSelectedPhoto = view.findViewById<ImageView>(R.id.iv_profile_photo)
         val tvAlreadyHaveAccount = view.findViewById<TextView>(R.id.tv_already_have_account)
+
+        val cbTermsAndConditions = view.findViewById<CheckBox>(R.id.cb_terms_conditions)
+        val spannableString = SpannableString(HtmlCompat.fromHtml(termsAndConditionsText, HtmlCompat.FROM_HTML_MODE_LEGACY))
+
+        val clickableSpan = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                val termsIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://mondongodev.github.io/restyle-landing-page/terms.html"))
+                startActivity(termsIntent)
+            }
+        }
+        val startIndex = spannableString.indexOf("términos y condiciones")
+        val endIndex = startIndex + "términos y condiciones".length
+        spannableString.setSpan(clickableSpan, startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        cbTermsAndConditions.text = spannableString
+        cbTermsAndConditions.movementMethod = android.text.method.LinkMovementMethod.getInstance()
+
 
         btnSelectPhoto.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
