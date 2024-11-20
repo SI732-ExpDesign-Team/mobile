@@ -10,7 +10,7 @@ class UserHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nu
 
     companion object {
         private const val DATABASE_NAME = "users.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
         const val TABLE_NAME = "users"
         const val COLUMN_ID = "id"
         const val COLUMN_FULL_NAME = "full_name"
