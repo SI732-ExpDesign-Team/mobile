@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical">
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -23,7 +22,6 @@
             android:background="?attr/colorPrimary"
             android:backgroundTint="#3F51B5"
             android:minHeight="?attr/actionBarSize">
-
             <ImageView
                 android:id="@+id/toolbar_logo"
                 android:layout_width="50dp"
@@ -31,7 +29,6 @@
                 android:layout_marginEnd="8dp"
                 android:contentDescription="Restyle Logo"
                 android:src="@drawable/restyle_logo" />
-
             <TextView
                 android:id="@+id/toolbar_text"
                 android:layout_width="wrap_content"
@@ -40,11 +37,9 @@
                 android:text="ReStyle"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
-
             <Space
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"/>
-
             <!--User Picture in Toolbar-->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/toolbar_client"
@@ -54,17 +49,13 @@
                 android:visibility="visible"
                 app:shapeAppearanceOverlay="@style/MyCustomShapeAppearance_SmallComponent"
                 android:src="@drawable/user" />
-
         </androidx.appcompat.widget.Toolbar>
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
-
         <!-- Imagen de Perfil -->
         <ImageView
             android:id="@+id/profile_image"
@@ -74,7 +65,6 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/user"
             android:src="@drawable/user" />
-
         <!-- Campo Nombre -->
         <TextView
             android:layout_width="wrap_content"
@@ -88,7 +78,6 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -98,7 +87,6 @@
             android:hint="Ingresa tus nombres"
             android:padding="10dp"
             android:textSize="18dp" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,7 +99,6 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -121,9 +108,7 @@
             android:hint="Ingresa tu dirección"
             android:padding="10dp"
             android:textSize="18dp" />
-
         <!-- Campo Correo Electrónico -->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -136,7 +121,6 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -147,9 +131,7 @@
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textSize="18dp" />
-
         <!-- Campo Teléfono -->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -162,7 +144,6 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -173,9 +154,7 @@
             android:inputType="phone"
             android:padding="10dp"
             android:textSize="18dp" />
-
         <!-- Campo Biografía -->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -188,7 +167,6 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -200,7 +178,6 @@
             android:lines="2"
             android:padding="5dp"
             android:textSize="18dp" />
-
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -211,18 +188,14 @@
             android:text="Guardar Cambios"
             android:textColor="#FFFFFF"
             app:backgroundTint="@color/dark_blue" />
-
     </LinearLayout>
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <!-- Bottom Navigation -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
@@ -236,8 +209,5 @@
                 android:layout_alignParentBottom="true"
                 app:menu="@menu/bottom_navigation_menu"/>
         </RelativeLayout>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 </LinearLayout>

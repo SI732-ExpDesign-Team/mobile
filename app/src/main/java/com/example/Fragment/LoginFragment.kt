@@ -1,6 +1,7 @@
 package Fragment
 
 import Persistence.UserHelper
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -37,10 +38,16 @@ class LoginFragment : Fragment() {
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
 
-            val (isLoginSuccessful, isRemodeler) = dbHelper.checkUser(email, password)
+            val (isLoginSuccessful, isRemodeler, userId) = dbHelper.checkUserWithId(email, password)
 
             if (isLoginSuccessful) {
                 Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
+
+                // Save user session in SharedPreferences
+                val sharedPreferences = requireContext().getSharedPreferences("user_session", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("userId", userId) // Store user ID in session
+                editor.apply()
 
                 // Check if the user is a remodeler or not and act accordingly
                 val intent = if (isRemodeler == true) {
@@ -76,4 +83,3 @@ class LoginFragment : Fragment() {
         return view
     }
 }
-
