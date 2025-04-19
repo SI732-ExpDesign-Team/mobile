@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.restyle_mobile.app-mergeDebugResources-32:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Paolo\\.gradle\\caches\\transforms-4\\2c622ec2c41c64176146296f2ad1243a\\transformed\\appcompat-1.7.0\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

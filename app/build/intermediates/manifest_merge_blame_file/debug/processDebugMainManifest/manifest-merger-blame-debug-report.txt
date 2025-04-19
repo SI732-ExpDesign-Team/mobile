@@ -1,0 +1,245 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.restyle_mobile"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:5:22-64
+12
+13    <permission
+13-->[androidx.core:core:1.13.1] C:\Users\Paolo\.gradle\caches\transforms-4\a8b18fd3b09046de6a4c259c04086a98\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+14        android:name="com.example.restyle_mobile.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.13.1] C:\Users\Paolo\.gradle\caches\transforms-4\a8b18fd3b09046de6a4c259c04086a98\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.13.1] C:\Users\Paolo\.gradle\caches\transforms-4\a8b18fd3b09046de6a4c259c04086a98\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+16
+17    <uses-permission android:name="com.example.restyle_mobile.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17-->[androidx.core:core:1.13.1] C:\Users\Paolo\.gradle\caches\transforms-4\a8b18fd3b09046de6a4c259c04086a98\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.13.1] C:\Users\Paolo\.gradle\caches\transforms-4\a8b18fd3b09046de6a4c259c04086a98\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+18
+19    <application
+19-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:7:5-53:19
+20        android:allowBackup="true"
+20-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:8:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.13.1] C:\Users\Paolo\.gradle\caches\transforms-4\a8b18fd3b09046de6a4c259c04086a98\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+22        android:dataExtractionRules="@xml/data_extraction_rules"
+22-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:9:9-65
+23        android:debuggable="true"
+24        android:extractNativeLibs="false"
+25        android:fullBackupContent="@xml/backup_rules"
+25-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:10:9-54
+26        android:icon="@mipmap/ic_launcher"
+26-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:11:9-43
+27        android:label="@string/app_name"
+27-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:12:9-41
+28        android:roundIcon="@mipmap/ic_launcher_round"
+28-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:13:9-54
+29        android:supportsRtl="true"
+29-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:14:9-35
+30        android:testOnly="true"
+31        android:theme="@style/Theme.Restylemobile"
+31-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:15:9-51
+32        android:usesCleartextTraffic="true" >
+32-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:16:9-44
+33        <activity
+33-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:18:9-20:40
+34            android:name="com.example.restyle_mobile.Register"
+34-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:19:13-37
+35            android:exported="false" />
+35-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:20:13-37
+36        <activity
+36-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:21:9-22:40
+37            android:name="com.example.restyle_mobile.LoginActivity"
+37-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:21:19-48
+38            android:exported="false" />
+38-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:22:13-37
+39        <activity
+39-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:23:9-24:40
+40            android:name="com.example.restyle_mobile.CompanyProfile"
+40-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:23:19-49
+41            android:exported="false" />
+41-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:24:13-37
+42        <activity
+42-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:25:9-26:40
+43            android:name="com.example.restyle_mobile.UserProfile"
+43-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:25:19-46
+44            android:exported="false" />
+44-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:26:13-37
+45        <activity
+45-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:27:9-28:39
+46            android:name="com.example.restyle_mobile.EditCompany"
+46-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:27:19-46
+47            android:exported="false" />
+47-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:28:13-37
+48        <activity
+48-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:29:9-31:40
+49            android:name="com.example.restyle_mobile.business_search.Activity.BusinessProfileActivity"
+49-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:30:13-77
+50            android:exported="false" />
+50-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:31:13-37
+51        <activity
+51-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:32:9-34:40
+52            android:name="com.example.restyle_mobile.business_portfolio.Activity.Portfolio"
+52-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:33:13-66
+53            android:exported="false" />
+53-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:34:13-37
+54        <activity
+54-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:35:9-37:40
+55            android:name="com.example.restyle_mobile.business_search.Activity.SearchBusinessesActivity"
+55-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:36:13-78
+56            android:exported="false" />
+56-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:37:13-37
+57        <activity
+57-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:38:9-45:20
+58            android:name="com.example.restyle_mobile.home_screen.Activity.HomeActivity"
+58-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:39:13-62
+59            android:exported="true" >
+59-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:40:13-36
+60            <intent-filter>
+60-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:41:13-44:29
+61                <action android:name="android.intent.action.MAIN" />
+61-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:42:17-69
+61-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:42:25-66
+62
+63                <category android:name="android.intent.category.LAUNCHER" />
+63-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:43:17-77
+63-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:43:27-74
+64            </intent-filter>
+65        </activity>
+66
+67        <!-- Declare your ProjectCreation activity -->
+68        <activity android:name="com.example.restyle_mobile.business_portfolio.Activity.ProjectCreation" />
+68-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:48:9-81
+68-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:48:19-78
+69
+70        <meta-data
+70-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:50:9-52:57
+71            android:name="preloaded_fonts"
+71-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:51:13-43
+72            android:resource="@array/preloaded_fonts" />
+72-->C:\Users\Paolo\Documents\PROGRAMACION\6to\restyle-mobile\app\src\main\AndroidManifest.xml:52:13-54
+73
+74        <activity
+74-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:23:9-27:75
+75            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+75-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:24:13-93
+76            android:excludeFromRecents="true"
+76-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:25:13-46
+77            android:exported="false"
+77-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:26:13-37
+78            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+78-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:27:13-72
+79        <!--
+80            Service handling Google Sign-In user revocation. For apps that do not integrate with
+81            Google Sign-In, this service will never be started.
+82        -->
+83        <service
+83-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:33:9-37:51
+84            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+84-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:34:13-89
+85            android:exported="true"
+85-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:35:13-36
+86            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+86-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:36:13-107
+87            android:visibleToInstantApps="true" />
+87-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Paolo\.gradle\caches\transforms-4\42ecb37f80bd3bbcc4593b8a8ecc7acb\transformed\play-services-auth-21.2.0\AndroidManifest.xml:37:13-48
+88
+89        <activity
+89-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\ca2c848c76b53591d4b8e0e99e8d4a33\transformed\play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
+90            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+90-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\ca2c848c76b53591d4b8e0e99e8d4a33\transformed\play-services-base-18.3.0\AndroidManifest.xml:20:19-85
+91            android:exported="false"
+91-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\ca2c848c76b53591d4b8e0e99e8d4a33\transformed\play-services-base-18.3.0\AndroidManifest.xml:22:19-43
+92            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+92-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\ca2c848c76b53591d4b8e0e99e8d4a33\transformed\play-services-base-18.3.0\AndroidManifest.xml:21:19-78
+93
+94        <meta-data
+94-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\1fc3e659453829e12cb62f75f0b638cf\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+95            android:name="com.google.android.gms.version"
+95-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\1fc3e659453829e12cb62f75f0b638cf\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+96            android:value="@integer/google_play_services_version" />
+96-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\1fc3e659453829e12cb62f75f0b638cf\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+97
+98        <provider
+98-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\6a87c514bab74084ca5fc2ea2f8c6f04\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+99            android:name="androidx.startup.InitializationProvider"
+99-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\6a87c514bab74084ca5fc2ea2f8c6f04\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+100            android:authorities="com.example.restyle_mobile.androidx-startup"
+100-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\6a87c514bab74084ca5fc2ea2f8c6f04\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+101            android:exported="false" >
+101-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\6a87c514bab74084ca5fc2ea2f8c6f04\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+102            <meta-data
+102-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\6a87c514bab74084ca5fc2ea2f8c6f04\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+103                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+103-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\6a87c514bab74084ca5fc2ea2f8c6f04\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+104                android:value="androidx.startup" />
+104-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Paolo\.gradle\caches\transforms-4\6a87c514bab74084ca5fc2ea2f8c6f04\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+105            <meta-data
+105-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Paolo\.gradle\caches\transforms-4\0dc997953ca272b8de24bf49fdd7403e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+106                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+106-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Paolo\.gradle\caches\transforms-4\0dc997953ca272b8de24bf49fdd7403e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+107                android:value="androidx.startup" />
+107-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Paolo\.gradle\caches\transforms-4\0dc997953ca272b8de24bf49fdd7403e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+108            <meta-data
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+109                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+110                android:value="androidx.startup" />
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+111        </provider>
+112        <provider
+112-->[com.squareup.picasso:picasso:2.8] C:\Users\Paolo\.gradle\caches\transforms-4\6c8730576761e33850da92be869c392d\transformed\picasso-2.8\AndroidManifest.xml:8:9-11:40
+113            android:name="com.squareup.picasso.PicassoProvider"
+113-->[com.squareup.picasso:picasso:2.8] C:\Users\Paolo\.gradle\caches\transforms-4\6c8730576761e33850da92be869c392d\transformed\picasso-2.8\AndroidManifest.xml:9:13-64
+114            android:authorities="com.example.restyle_mobile.com.squareup.picasso"
+114-->[com.squareup.picasso:picasso:2.8] C:\Users\Paolo\.gradle\caches\transforms-4\6c8730576761e33850da92be869c392d\transformed\picasso-2.8\AndroidManifest.xml:10:13-72
+115            android:exported="false" />
+115-->[com.squareup.picasso:picasso:2.8] C:\Users\Paolo\.gradle\caches\transforms-4\6c8730576761e33850da92be869c392d\transformed\picasso-2.8\AndroidManifest.xml:11:13-37
+116
+117        <receiver
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+118            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+119            android:directBootAware="false"
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+120            android:enabled="true"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+121            android:exported="true"
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+122            android:permission="android.permission.DUMP" >
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+123            <intent-filter>
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+124                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+125            </intent-filter>
+126            <intent-filter>
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+127                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+128            </intent-filter>
+129            <intent-filter>
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+130                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+131            </intent-filter>
+132            <intent-filter>
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+133                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Paolo\.gradle\caches\transforms-4\0e8040a8bcd6d93271cb2cd513e8946c\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+134            </intent-filter>
+135        </receiver>
+136    </application>
+137
+138</manifest>
